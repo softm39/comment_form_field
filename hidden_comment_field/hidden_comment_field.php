@@ -10,7 +10,7 @@
  * @version   1.0
  * @author    Arsen Kirillov <softm39v@gmail.com>
  * @license   GPL-2.0
- * @link      http://publikz.com/?p=26966&preview=true
+ * @link      https://github.com/softm39/comment_form_field
  * @copyright 2018 Arsen Kirillov
  *
  * @wordpress-plugin
@@ -18,7 +18,7 @@
  * Plugin URI: 
  * Description: This plugin provides a jQuery generated field to comment formcontent and verification of this form after comment is posted to provide better bot protection
  * Author: Arsen Kirillov
- * Author URI: http://publikz.com
+ * Author URI: http://publikz.com/?p=26966&preview=true
  * Version: 1.0
  */
 // Load Hide This class
