@@ -6,7 +6,7 @@
  * Hidden Comment Field provides functionality to block more spam by adding hidden field with jquery
  *
  * @package hidden-field-to-comments
- * @since   1.0.0
+ * @since   1.0.1
  */
 
 // init field and value
@@ -24,7 +24,7 @@ function hc_comment_form_html(){
  $field_name = $_SESSION["field_name"];
  $make_date = $_SESSION["make_date"];
 ?>
-<span class="ph_<?=$field_name;?>" style="display:none1;"></span>
+<span class="ph_<?=$field_name;?>" style="display:none;"></span>
 <script type="text/javascript">
 (function($) {
   $(".ph_<?=$field_name;?>").html("<input type='text' name='<?=$field_name;?>' id='<?=$field_name;?>' value='sigma-01-<?=$make_date;?>' />");

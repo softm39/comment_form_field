@@ -17,7 +17,7 @@ Hidden Comment Field provides functionality to block more spam by adding hidden 
 
 ## Contribute
 
-You can make suggestions and submit your own modifications to this plugin on [Github](https://github.com/andrezrv/hide-this).
+You can make suggestions and submit your own modifications to this plugin on [Github](https://github.com/softm39/comment_form_field).
 
 ## Installation
 
@@ -27,6 +27,9 @@ You can make suggestions and submit your own modifications to this plugin on [Gi
 
 
 == Changelog ==
+
+= 1.0.1 =
+Fixed visibility of hidden field
 
 = 1.0.0 =
 First release!
