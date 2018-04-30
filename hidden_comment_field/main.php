@@ -1,31 +1,46 @@
 <?php 
 
-$make_date = md5("sigma".date("YMDHIS")."fig") ;
-//$make_date = "";
+/**
+ * Hidden Field To Comments
+ *
+ * Hidden Comment Field provides functionality to block more spam by adding hidden field with jquery
+ *
+ * @package hidden-field-to-comments
+ * @since   1.0.0
+ */
 
+// init field and value
+session_start();
+if (!isset($_SESSION["field_name"]))
+  $_SESSION["field_name"] = "comment" . mt_rand(10000,100000);
+if (!isset($_SESSION["make_date"]))
+  $_SESSION["make_date"] = mt_rand(10000,100000);
+
+// add action to the form
 add_action("comment_form_logged_in_after","hc_comment_form_html");
 add_action("comment_form_after_fields","hc_comment_form_html");
 
 function hc_comment_form_html(){
-  global $make_date;
+ $field_name = $_SESSION["field_name"];
+ $make_date = $_SESSION["make_date"];
 ?>
-<input type="hidden" name="softm_catch_comment_spam" id="softm_catch_comment_spam" value="" />
+<span class="ph_<?=$field_name;?>" style="display:none1;"></span>
 <script type="text/javascript">
 (function($) {
-  $("[name=softm_catch_comment_spam]").val("sigma-01-<?=$make_date;?>");
+  $(".ph_<?=$field_name;?>").html("<input type='text' name='<?=$field_name;?>' id='<?=$field_name;?>' value='sigma-01-<?=$make_date;?>' />");
 })( jQuery );
 </script><?php
 }
 
+// process form
 add_filter( 'preprocess_comment', function($_data){
-    global $make_date;
+ $field_name = $_SESSION["field_name"];
+ $make_date = $_SESSION["make_date"];
     if( 
-      !isset($_POST['softm_catch_comment_spam']) ||
-      $_POST['softm_catch_comment_spam']!="sigma-01-".$make_date
+      !isset($_POST[$field_name]) ||
+      $_POST[$field_name]!="sigma-01-".$make_date
     )
     die("http/403");
     return $_data;
   },10,2);
-
-
 
